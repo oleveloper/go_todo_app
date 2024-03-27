@@ -1,4 +1,4 @@
-FROM golang:1.18.2-bullseye AS deploy-builder
+FROM golang:1.22.1-bullseye AS deploy-builder
 
 WORKDIR /app
 
@@ -15,7 +15,9 @@ COPY --from=deploy-builder /app/app .
 
 CMD ["./app"]
 
-FROM golang:1.18.2-bullseye as dev
+FROM golang:1.22.1 as dev
 WORKDIR /app
 RUN go install github.com/cosmtrek/air@latest
+COPY go.mod go.sum ./
+RUN go mod download
 CMD ["air"]

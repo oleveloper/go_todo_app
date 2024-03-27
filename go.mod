@@ -1,5 +1,5 @@
-module github.com/oleveloper/go_todo_app
+module main
 
-go 1.19
+go 1.22.1
 
-require golang.org/x/sync v0.6.0 // indirect
+require golang.org/x/sync v0.6.0

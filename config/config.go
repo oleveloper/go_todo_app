@@ -6,7 +6,7 @@ import (
 
 type Config struct {
 	Env  string `env:"ENV" envDefault:"dev"`
-	Port int    `env:"PORT" envDefault:"8080"`
+	Port int    `env:"PORT" envDefault:"80"`
 }
 
 func New() (*Config, error) {

@@ -1,10 +1,10 @@
-package todo
+package main
 
 import (
 	"context"
 	"fmt"
 	"log"
-	"main/todo/config"
+	"main/config"
 	"net"
 	"net/http"
 	"os"

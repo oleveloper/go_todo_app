@@ -12,7 +12,7 @@ import (
 	"golang.org/x/sync/errgroup"
 )
 
-func run(ctx context.Context, l net.Listener) error {
+func run(ctx context.Context) error {
 	cfg, err := config.New()
 	if err != nil {
 		return err
@@ -50,7 +50,7 @@ func run(ctx context.Context, l net.Listener) error {
 }
 
 func main() {
-	if err := run(context.Background(), nil); err != nil {
+	if err := run(context.Background()); err != nil {
 		log.Fatalf("failed to terminated server: %v", err)
 		os.Exit(1)
 	}

@@ -10,6 +10,7 @@ require (
 require filippo.io/edwards25519 v1.1.0 // indirect
 
 require (
+	github.com/DATA-DOG/go-sqlmock v1.5.2
 	github.com/caarlos0/env/v6 v6.10.1
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/go-chi/chi/v5 v5.0.12

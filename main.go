@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
+	"go_todo_app/config"
 	"log"
-	"main/config"
 	"net"
 	"net/http"
 	"os"

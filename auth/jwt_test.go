@@ -20,8 +20,6 @@ import (
 	"github.com/lestrrat-go/jwx/v2/jwa"
 	"github.com/lestrrat-go/jwx/v2/jwk"
 	"github.com/lestrrat-go/jwx/v2/jwt"
-
-	"github.com/stretchr/testify/assert"
 )
 
 func TestEmbed(t *testing.T) {
@@ -236,10 +234,10 @@ func TestJWTer_GetJWT_NG(t *testing.T) {
 			)
 			req.Header.Set(`Authorization`, fmt.Sprintf(`Bearer %s`, signed))
 			got, err := sut.GetToken(ctx, req)
-			assert.Nil(t, got)
-			// if err == nil {
-			// 	t.Errorf("want error, but got nil")
-			// }
+			// assert.Nil(t, err, "want error, but got nil")
+			if err == nil {
+				t.Errorf("want error, but got nil")
+			}
 			if got != nil {
 				t.Errorf("want nil, but got %v", got)
 			}
